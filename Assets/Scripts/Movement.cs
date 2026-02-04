@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
     public float maxSpeed; // 10
     public float rotateSpeed; // 25
-    private float currentSpeed;
+    public float currentSpeed;
     private float Gear = 0;
 
     private float moveInput;
