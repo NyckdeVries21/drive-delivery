@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class ClickOnMap : MonoBehaviour
 {
-    [SerializeField] private GameObject Map;
+    [SerializeField] private GameObject map;
 
     public void ShowMinimap()
     {
-        Map.SetActive(false);
+        map.SetActive(false);
     }
 
     public void ShowMap()
     {
-        Map.SetActive(true);
+        map.SetActive(true);
     }
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97faf3bf3f352141bf84900c431c1dc, type: 3}
+  m_Name: TestChallenge
+  m_EditorClassIdentifier: Assembly-CSharp::Challenge
+  ACompanyname: Green Object
+  BCompanyname: Green Object
+  Distance: '45 '
+  TaskToComplete: Drive
+  ProductName: ToiletPaper
+  ProductAmount: 20
+  Money: 10
+  aCompanyTransform: {fileID: 6954764940174029396, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}

@@ -360,7 +360,6 @@ GameObject:
   - component: {fileID: 21166798}
   - component: {fileID: 21166797}
   - component: {fileID: 21166796}
-  - component: {fileID: 21166799}
   m_Layer: 5
   m_Name: TaskShow (1)
   m_TagString: Untagged
@@ -412,7 +411,7 @@ MonoBehaviour:
   productAmount: {fileID: 632635227}
   rewards: {fileID: 1130616092}
   testChallenge: {fileID: 11400000, guid: 7862ab0f5f5cd6b41a5a238a2f3529f3, type: 2}
-  map: {fileID: 13280828}
+  map: {fileID: 0}
 --- !u!114 &21166797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,62 +450,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21166794}
   m_CullTransparentMesh: 1
---- !u!114 &21166799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21166794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 21166797}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 21166796}
-        m_TargetAssemblyTypeName: ShowTask, Assembly-CSharp
-        m_MethodName: TeleportToStartLoc
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &21436091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1913,7 +1856,7 @@ MonoBehaviour:
   productAmount: {fileID: 1507778103}
   rewards: {fileID: 1763068254}
   testChallenge: {fileID: 11400000, guid: 7862ab0f5f5cd6b41a5a238a2f3529f3, type: 2}
-  map: {fileID: 13280828}
+  map: {fileID: 0}
 --- !u!114 &321364209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6692,23 +6635,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4324183160605158426, guid: 249ebbaae21002c499f1c8a7925c1905, type: 3}
   m_PrefabInstance: {fileID: 509143900}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &903077617 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4472037186048366039, guid: 520f0677b088aef43b89f8507faea246, type: 3}
-  m_PrefabInstance: {fileID: 4867632387354087582}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &903077621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903077617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e1d34c5816586419354fff3c92eca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!1 &911311113
 GameObject:
   m_ObjectHideFlags: 0
@@ -10310,11 +10236,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8ec36c7f9b40f4faa40bf80afec5a3, type: 3}
---- !u!4 &1607378421 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-  m_PrefabInstance: {fileID: 4335921830099046107}
+--- !u!1 &1607378420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607378421}
+  m_Layer: 0
+  m_Name: CarDealer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1607378421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607378420}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -259.9, y: 0, z: 17.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1066941477}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1618128562
 GameObject:
   m_ObjectHideFlags: 0
@@ -10975,7 +10927,6 @@ GameObject:
   - component: {fileID: 1732194110}
   - component: {fileID: 1732194109}
   - component: {fileID: 1732194108}
-  - component: {fileID: 1732194111}
   m_Layer: 5
   m_Name: TaskShow
   m_TagString: Untagged
@@ -11027,7 +10978,7 @@ MonoBehaviour:
   productAmount: {fileID: 669481400}
   rewards: {fileID: 605202461}
   testChallenge: {fileID: 11400000, guid: 7862ab0f5f5cd6b41a5a238a2f3529f3, type: 2}
-  map: {fileID: 13280828}
+  map: {fileID: 0}
 --- !u!114 &1732194109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11066,62 +11017,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732194106}
   m_CullTransparentMesh: 1
---- !u!114 &1732194111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732194106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1732194109}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732194108}
-        m_TargetAssemblyTypeName: ShowTask, Assembly-CSharp
-        m_MethodName: TeleportToStartLoc
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1744778075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11395,7 +11290,6 @@ GameObject:
   - component: {fileID: 1764809965}
   - component: {fileID: 1764809964}
   - component: {fileID: 1764809963}
-  - component: {fileID: 1764809966}
   m_Layer: 5
   m_Name: TaskShow (2)
   m_TagString: Untagged
@@ -11447,7 +11341,7 @@ MonoBehaviour:
   productAmount: {fileID: 2011617926}
   rewards: {fileID: 204145032}
   testChallenge: {fileID: 11400000, guid: 7862ab0f5f5cd6b41a5a238a2f3529f3, type: 2}
-  map: {fileID: 13280828}
+  map: {fileID: 0}
 --- !u!114 &1764809964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11486,62 +11380,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764809961}
   m_CullTransparentMesh: 1
---- !u!114 &1764809966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764809961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1764809964}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1764809963}
-        m_TargetAssemblyTypeName: ShowTask, Assembly-CSharp
-        m_MethodName: TeleportToStartLoc
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1764916274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13828,63 +13666,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125206560}
   m_CullTransparentMesh: 1
---- !u!1001 &4335921830099046107
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1066941477}
-    m_Modifications:
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -259.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2689959522370496777, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954764940174029396, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
-      propertyPath: m_Name
-      value: CarDealer
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4ed61c481115c554da8e3ac6ac84bbd0, type: 3}
 --- !u!1001 &4867632387354087582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13956,10 +13737,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3009581140839443759, guid: 520f0677b088aef43b89f8507faea246, type: 3}
       insertIndex: -1
       addedObject: {fileID: 932289543}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4472037186048366039, guid: 520f0677b088aef43b89f8507faea246, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 903077621}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520f0677b088aef43b89f8507faea246, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

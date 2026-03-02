@@ -1,57 +1,128 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
-    public float maxSpeed; // 10
-    public float rotateSpeed; // 25
+    //public float maxSpeed; // 10
+    //public float rotateSpeed; // 25
     public float currentSpeed;
     private float Gear = 0;
 
-    private float moveInput;
-    private float rotateInput;
-    private Controls Controls;
+    //private float moveInput;
+    //private float rotateInput;
+    //private Controls Controls;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI GearText;
     [SerializeField] private TextMeshProUGUI SpeedText;
 
+    public float motorForce = 100f;  // wheel collider tutorial: https://www.youtube.com/watch?v=9Cdky9Wmus8
+    public float brakeForce = 1000f;
+    public float maxSteerAngle = 30f;
 
+    [Header("Wheel Colliders")]
+    [SerializeField] private WheelCollider frontLeftWC;
+    [SerializeField] private WheelCollider frontRightWC;
+    [SerializeField] private WheelCollider rearLeftWC;
+    [SerializeField] private WheelCollider rearRightWC;
+
+    [Header("Transform")]
+    [SerializeField] private Transform frontLeftWT;
+    [SerializeField] private Transform frontRightWT;
+    [SerializeField] private Transform rearLeftWT;
+    [SerializeField] private Transform rearRightWT;
+
+    private float horizontalInput;
+    private float verticalInput;
+    private float currentSteerAngle;
+    private float currentBrakeForce;
+    private bool isBraking;
+
+    private Controls Controls;
 
     private Rigidbody rb;
-    private void Awake()
+
+    private void Update()
     {
-        Controls = new Controls();
-        Controls.Drive.Enable();
-
-        Controls.Drive.Drive.performed += OnMove;
-
-        rb = GetComponent<Rigidbody>();
-    }
-
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        Vector2 input = context.ReadValue<Vector2>();
-        moveInput = input.y;      // forward/back
-        rotateInput = input.x;    // left/right
-    }
-
-
-    void Update()
-    {
-        transform.Translate(Vector3.forward * moveInput * maxSpeed * Time.deltaTime, Space.Self);
-        transform.Rotate(Vector3.up, rotateInput * rotateSpeed * Time.deltaTime);
-        currentSpeed = rb.linearVelocity.magnitude * 3.6f; // speedometer https://www.youtube.com/watch?v=CC8j_fU2GTQ&t=27s /
+        UpdateWheel();
 
         if (SpeedText != null) SpeedText.text = ((int)currentSpeed) + " km/h";
         GearText.text = "" + Gear;
     }
 
+    private void FixedUpdate()
+    {
+        HandleMotor();
+        HandleSteering();
+        ApplyBraking();
+    }
+    private void Awake()
+    {
+        Controls = new Controls();
+        Controls.Drive.Enable();
+
+        Controls.Drive.Drive.performed += GetInput;
+        Controls.Drive.Drive.canceled += GetInput;
+        
+
+        rb = GetComponentInChildren<Rigidbody>();
+    }
+
+    private void GetInput(InputAction.CallbackContext context)
+    {
+        horizontalInput = context.ReadValue<Vector2>().x;
+        verticalInput = context.ReadValue<Vector2>().y;
+        isBraking = Input.GetKey(KeyCode.Space);
+    }
+
+    private void HandleMotor()
+    {
+        frontLeftWC.motorTorque = verticalInput*motorForce;
+        frontRightWC.motorTorque = verticalInput*motorForce;
+
+        currentBrakeForce = isBraking? brakeForce: 0f;
+        ApplyBraking();
+
+    }
+
+    private void ApplyBraking()
+    {
+        frontLeftWC.brakeTorque = currentBrakeForce;
+        frontRightWC.brakeTorque= currentBrakeForce;
+        rearLeftWC.brakeTorque = currentBrakeForce;
+        rearRightWC.brakeTorque = currentBrakeForce;
+    }
+
+    private void HandleSteering()
+    {
+        currentSteerAngle = maxSteerAngle * horizontalInput;
+        frontLeftWC.steerAngle = currentSteerAngle;
+        frontRightWC.steerAngle= currentSteerAngle;
+    }
+
+    private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
+    {
+        Vector3 pos;
+        Quaternion rot;
+        wheelCollider.GetWorldPose(out pos, out rot);
+        wheelTransform.position = pos;
+        wheelTransform.rotation = rot;
+    }
+
+    private void UpdateWheel()
+    {
+        UpdateSingleWheel(frontLeftWC, frontLeftWT);
+        UpdateSingleWheel(frontRightWC, frontRightWT);
+        UpdateSingleWheel(rearLeftWC, rearLeftWT);
+        UpdateSingleWheel(rearRightWC, rearRightWT);
+    }
+
     private void GearSystem()
     {
-        if ( Gear == 0)
+        if (Gear == 0)
         {
             GearText.text = "N";
         }
