@@ -15,8 +15,12 @@ public class ShowTask : MonoBehaviour
 
     [SerializeField] private GameObject map;
 
+    public TaskManager taskManager;
+
     private void Start()
     {
+        taskManager = FindAnyObjectByType<TaskManager>();
+
         aDeliveryCompany.text = "Start: " + challenge.ACompanyname;
         bDeliveryCompany.text = "Deliver at: " + challenge.BCompanyname;
         distance.text = challenge.Distance + "km";
@@ -25,5 +29,11 @@ public class ShowTask : MonoBehaviour
         rewards.text = "Receive: " + challenge.Money + '\n' + "XP: " + challenge.XP;
     }
 
-    
+    public void SelectThisTask()
+    {
+        taskManager.SelectedTask(challenge);
+        GameManager.instance.questActive = true;
+    }
+
+
 }

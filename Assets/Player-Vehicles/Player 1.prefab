@@ -9,9 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 617955690496742702}
-  - component: {fileID: 6182836486563753557}
   - component: {fileID: 6246278852146579035}
-  - component: {fileID: 3280230709001813456}
   - component: {fileID: 4353521749939149998}
   - component: {fileID: 3591475218156949668}
   m_Layer: 0
@@ -37,32 +35,6 @@ Transform:
   - {fileID: 9200394729784458385}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6182836486563753557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702225303435375854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e3589ce3ef1ce241a8422dfd96c0fb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Movement
-  currentSpeed: 0
-  GearText: {fileID: 0}
-  SpeedText: {fileID: 0}
-  motorForce: 100
-  brakeForce: 1000
-  maxSteerAngle: 30
-  frontLeftWC: {fileID: 1941983376744734159}
-  frontRightWC: {fileID: 5640292991239400518}
-  rearLeftWC: {fileID: 1337838235049575465}
-  rearRightWC: {fileID: 7133749192325263717}
-  frontLeftWT: {fileID: 7504624625244886388}
-  frontRightWT: {fileID: 8688586621410530994}
-  rearLeftWT: {fileID: 3096318609230622953}
-  rearRightWT: {fileID: 5915320415806415186}
 --- !u!114 &6246278852146579035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,36 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e1d34c5816586419354fff3c92eca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
---- !u!114 &3280230709001813456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702225303435375854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: a261aee2aa8f08f449b75739d60ff328, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Drive
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &4353521749939149998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +59,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55abe5064ced99a4984db3a7bd79257e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  moneyAmount: 0
+  experienceLevel: 1
+  experience: 0
+  tasksCompleted: 0
   txtMoneyAmount: {fileID: 0}
 --- !u!114 &3591475218156949668
 MonoBehaviour:
@@ -197,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cdfc9104927b394da492194704a9b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompleteDelivery
+  completeTaskUI: {fileID: 0}
 --- !u!1001 &386154619625969694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,7 +154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 118632779829998876, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47999996
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 193252789685600706, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_IsActive
@@ -215,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1714483178506181687, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_Radius
-      value: 0.3
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 1948860597126523659, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_IsActive
@@ -223,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2281260141959169489, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_Radius
-      value: 0.3
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 2304371372545140527, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_Layer
@@ -287,19 +234,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5412690148437374040, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_Radius
-      value: 0.3
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 5866643545896565396, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 5973474487867747050, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 6641003134712667572, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_Mass
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6641003134712667572, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_UseGravity
@@ -307,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6641003134712667572, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6645027097564869094, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_IsActive
@@ -319,11 +266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7086738047695577698, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47999996
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 7375715918634576251, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_Radius
-      value: 0.3
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 8779874992124371068, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_IsActive
@@ -378,7 +325,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8860194371547636879, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6448364064012840129}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3489392675932506612, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 945286670049491704}
+    - targetCorrespondingSourceObject: {fileID: 3489392675932506612, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 371883629617388997}
+    - targetCorrespondingSourceObject: {fileID: 3489392675932506612, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2803732917294715876}
   m_SourcePrefab: {fileID: 100100000, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
 --- !u!146 &1337838235049575465 stripped
 WheelCollider:
@@ -395,6 +351,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3432781723114531063, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
   m_PrefabInstance: {fileID: 386154619625969694}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3834592646649614826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3489392675932506612, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
+  m_PrefabInstance: {fileID: 386154619625969694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &945286670049491704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834592646649614826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3589ce3ef1ce241a8422dfd96c0fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement
+  currentSpeed: 0
+  GearText: {fileID: 0}
+  SpeedText: {fileID: 0}
+  motorForce: 100
+  brakeForce: 1000
+  maxSteerAngle: 30
+  frontLeftWC: {fileID: 1941983376744734159}
+  frontRightWC: {fileID: 5640292991239400518}
+  rearLeftWC: {fileID: 1337838235049575465}
+  rearRightWC: {fileID: 7133749192325263717}
+  frontLeftWT: {fileID: 7504624625244886388}
+  frontRightWT: {fileID: 8688586621410530994}
+  rearLeftWT: {fileID: 3096318609230622953}
+  rearRightWT: {fileID: 5915320415806415186}
+--- !u!114 &371883629617388997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834592646649614826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: a261aee2aa8f08f449b75739d60ff328, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Drive
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!65 &2803732917294715876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834592646649614826}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.285971, y: 1.7932248, z: 4.398434}
+  m_Center: {x: -0.00000083446525, y: 1.1168559, z: -0.16744737}
 --- !u!146 &5640292991239400518 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 5412690148437374040, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}

@@ -5,8 +5,9 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [Header("InfoField")]
-    [SerializeField] private TextMeshProUGUI playerMoneyAmount;
+    [SerializeField] public TextMeshProUGUI playerMoneyAmount;
     [SerializeField] private TextMeshProUGUI dayTime;
+    [SerializeField] private TextMeshProUGUI pLevel;
 
     [Header("Clock Data")]
     private float timer;
@@ -14,6 +15,14 @@ public class UIManager : MonoBehaviour
     private int hours = 8;
     private List<string> dayNames;
     private int week;
+
+    [Header("Settings Tabs")]
+    [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject saveDataMenu;
+
+    [Header("Game Active?")]
+    [SerializeField] private GameObject inGameUI;
+    
 
     private void Update()
     {
@@ -24,6 +33,17 @@ public class UIManager : MonoBehaviour
             dayTime.text = hours + ":" + minutes;
         }
         CalculateClock();
+        PlayerMoneyUpdate();
+        ShowLevel();
+
+        if ( GameManager.instance.questActive == false)
+        {
+            inGameUI.SetActive(false);
+        }
+        else
+        {
+            inGameUI.SetActive(true);
+        }
     }
 
     private void CalculateClock()
@@ -42,6 +62,36 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void PlayerMoneyUpdate()
+    {
+        PlayerStats playerStats = FindAnyObjectByType<PlayerStats>();
+
+        playerMoneyAmount.text = "Cash: " + playerStats.moneyAmount;
+    }
+
+    private void ShowLevel()
+    {
+        PlayerStats playerStats = FindAnyObjectByType<PlayerStats>();
+        pLevel.text = "" + playerStats.experienceLevel;
+    }
+
+    public void SettingTabOpenClose()
+    {
+        if (!settingsMenu.activeSelf)
+        {
+            settingsMenu.SetActive(true);
+        }
+        else { settingsMenu.SetActive(false); }
+    }
+
+    public void SaveDataTabOpenClose() // save data tab
+    {
+        if (!saveDataMenu.activeSelf)
+        {
+            saveDataMenu.SetActive(true);
+        } else {saveDataMenu.SetActive(false); }
     }
 
 }

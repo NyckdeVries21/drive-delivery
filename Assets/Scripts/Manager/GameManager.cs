@@ -4,12 +4,21 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [Header("Objects")]
+    [SerializeField] private GameObject questList;
+    [SerializeField] public GameObject completeTaskUI;
+
+    [Header("Game Activity")]
+    public bool questActive = false;
+
     private void Start()
     {
         if (instance == null)
         {
             instance = this;
         }
+
+        questList.SetActive(true);
     }
 
     private void Update()
@@ -17,8 +26,5 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void ShowDeliveryStats()
-    {
-        // laat de stats/info zien v/d opdracht in de UI
-    }
+    
 }

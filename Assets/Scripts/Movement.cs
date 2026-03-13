@@ -6,14 +6,8 @@ using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
-    //public float maxSpeed; // 10
-    //public float rotateSpeed; // 25
     public float currentSpeed;
     private float Gear = 0;
-
-    //private float moveInput;
-    //private float rotateInput;
-    //private Controls Controls;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI GearText;
@@ -49,6 +43,8 @@ public class Movement : MonoBehaviour
     {
         UpdateWheel();
 
+        currentSpeed = rb.linearVelocity.magnitude * 3.6f;
+        GearSystem();
         if (SpeedText != null) SpeedText.text = ((int)currentSpeed) + " km/h";
         GearText.text = "" + Gear;
     }
@@ -70,7 +66,12 @@ public class Movement : MonoBehaviour
         Controls.Drive.Brake.performed += ctx => isBraking = true;
         Controls.Drive.Brake.canceled += ctx => isBraking = false;
 
-        rb = GetComponentInChildren<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void PlayerControls()
+    {
+
     }
 
     private void GetInput(InputAction.CallbackContext context)
