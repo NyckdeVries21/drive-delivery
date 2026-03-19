@@ -30,7 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9200394729784458385}
   m_Father: {fileID: 0}
@@ -62,8 +62,11 @@ MonoBehaviour:
   moneyAmount: 0
   experienceLevel: 1
   experience: 0
+  xpToLevelUp: 40
+  multiplyXPAmount: 1.4
   tasksCompleted: 0
   txtMoneyAmount: {fileID: 0}
+  showXPFill: {fileID: 0}
 --- !u!114 &3591475218156949668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +280,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8860194371547636879, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860194371547636879, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860194371547636879, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860194371547636879, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -315,6 +330,10 @@ PrefabInstance:
     - target: {fileID: 8860194371547636879, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860194371547636879, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2645076418980020411, guid: 9bd3d4480a4511549b268f2f106454b0, type: 3}
@@ -371,9 +390,9 @@ MonoBehaviour:
   currentSpeed: 0
   GearText: {fileID: 0}
   SpeedText: {fileID: 0}
-  motorForce: 100
-  brakeForce: 1000
-  maxSteerAngle: 30
+  motorForce: 500
+  brakeForce: 5000
+  maxSteerAngle: 60
   frontLeftWC: {fileID: 1941983376744734159}
   frontRightWC: {fileID: 5640292991239400518}
   rearLeftWC: {fileID: 1337838235049575465}
