@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class NPCCar : MonoBehaviour
 {
-    public Transform[] waypoints;
+    public Transform waypointParent;
+    private Transform[] waypoints;
     public float waypointReachDistance = 5f;
 
     public float maxMotorTorque = 500f;  
-    public float brakeForce = 5000f;
+    public float brakeForce = 8000f;
     public float maxSteerAngle = 50f;
     public float maxSpeed = 40f;
 
@@ -39,6 +40,17 @@ public class NPCCar : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        if (waypointParent != null)
+        {
+            int count = waypointParent.childCount;
+            waypoints = new Transform[count];
+
+            for (int i = 0; i < count; i++)
+            {
+                waypoints[i] = waypointParent.GetChild(i);
+            }
+        }
     }
 
     void FixedUpdate()

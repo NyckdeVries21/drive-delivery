@@ -26,5 +26,5 @@ public class GameManager : MonoBehaviour
         
     }
 
-    
+    // shop & owned stuff
 }
